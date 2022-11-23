@@ -1,0 +1,384 @@
+title: Remote
+views:
+  - theme: Backend-selected
+    path: default_view
+    title: Home
+    badges: []
+    cards:
+      - title: Home
+        type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_changesource
+                  service_data:
+                    device: STEREO
+                name: STEREO
+                show_icon: false
+                entity: input_select.remote_type
+                color: rgb(255, 255, 255)
+                state:
+                  - value: STEREO
+                    color: rgb(0, 255, 0)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_changesource
+                  service_data:
+                    device: TV
+                name: TV
+                show_icon: false
+                entity: input_select.remote_type
+                color: rgb(255, 255, 255)
+                state:
+                  - value: TV
+                    color: rgb(0, 255, 0)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_changesource
+                  service_data:
+                    device: Decoder
+                name: Decoder
+                show_icon: false
+                entity: input_select.remote_type
+                color: rgb(255, 255, 255)
+                state:
+                  - value: Decoder
+                    color: rgb(0, 255, 0)
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: Power on
+                icon: mdi:power
+                color: rgb(255, 0, 0)
+                styles:
+                  card:
+                    - height: 70px
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: play
+                icon: mdi:play
+                color: rgb(75, 75, 77)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: pause
+                icon: mdi:pause
+                color: rgb(75, 75, 77)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: stop
+                icon: mdi:stop
+                color: rgb(75, 75, 77)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: rewind
+                icon: mdi:rewind
+                color: rgb(75, 75, 77)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: forward
+                icon: mdi:fast-forward
+                color: rgb(75, 75, 77)
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: SOURCE_RADIO
+                icon: mdi:radio
+                color: rgb(0, 255, 0)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: SOURCE_TV
+                icon: mdi:television
+                color: rgb(0, 0, 255)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: SOURCE_CD
+                icon: mdi:disc
+                color: rgb(255, 255, 0)
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: Power on
+                icon: mdi:power
+                color: rgb(75, 75, 77)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: UP
+                icon: mdi:arrow-up-thick
+                color: rgb(10, 170, 238)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: SOURCE
+                color: rgb(75, 75, 77)
+                icon: mdi:list-box
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: LEFT
+                icon: mdi:arrow-left-thick
+                color: rgb(10, 170, 238)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: OK
+                icon: mdi:thumb-up-outline
+                color: rgb(10, 170, 238)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: RIGHT
+                icon: mdi:arrow-right-thick
+                color: rgb(10, 170, 238)
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: undo
+                icon: mdi:undo
+                color: rgb(75, 75, 77)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: down
+                icon: mdi:arrow-down-thick
+                color: rgb(10, 170, 238)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: exit
+                icon: mdi:exit-to-app
+                color: rgb(75, 75, 77)
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: volume_down
+                hold_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: volume_down
+                    num_repeats: 5
+                    delay_secs: 0.05
+                icon: mdi:volume-minus
+                color: rgb(75, 75, 77)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: volume_mute
+                hold_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: volume_mute
+                icon: mdi:volume-mute
+                color: rgb(75, 75, 77)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: volume_up
+                hold_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: volume_up
+                    num_repeats: 5
+                    delay_secs: 0.05
+                icon: mdi:volume-plus
+                color: rgb(75, 75, 77)
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: 1
+                icon: mdi:numeric-1-box-outline
+                color: rgb(150, 150, 150)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: 2
+                icon: mdi:numeric-2-box-outline
+                color: rgb(150, 150, 150)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: 3
+                icon: mdi:numeric-3-box-outline
+                color: rgb(150, 150, 150)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: 4
+                icon: mdi:numeric-4-box-outline
+                color: rgb(150, 150, 150)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: 5
+                icon: mdi:numeric-5-box-outline
+                color: rgb(150, 150, 150)
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: 6
+                icon: mdi:numeric-6-box-outline
+                color: rgb(150, 150, 150)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: 7
+                icon: mdi:numeric-7-box-outline
+                color: rgb(150, 150, 150)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: 8
+                icon: mdi:numeric-8-box-outline
+                color: rgb(150, 150, 150)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: 9
+                icon: mdi:numeric-9-box-outline
+                color: rgb(150, 150, 150)
+              - type: custom:button-card
+                color_type: card
+                tap_action:
+                  action: call-service
+                  service: script.remote_press_button
+                  service_data:
+                    command: 0
+                icon: mdi:numeric-0-box-outline
+                color: rgb(150, 150, 150)
+          - show_name: true
+            show_icon: false
+            type: button
+            hold_action:
+              action: toggle
+            entity: input_boolean.remote_learning
+            name: LEARNING MODE
+            show_state: true
+            icon_height: 10px
+            tap_action:
+              action: toggle

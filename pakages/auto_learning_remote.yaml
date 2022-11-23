@@ -1,0 +1,60 @@
+input_select:
+  remote_type:
+      name: REMOTE_TYPE
+      options:
+        - STEREO
+        - TV
+        - Decoder
+      initial: STEREO
+      icon: mdi:remote
+
+input_boolean:
+  remote_learning:
+    name: remote_learning
+    icon: mdi:remote
+    
+script:
+  remote_press_button:
+    alias: remote_press_button
+    fields:
+      command:
+        description: The name of the button pressed
+        example: Stereo ON
+    sequence:
+    - if:
+      - condition: state
+        entity_id: input_boolean.remote_learning
+        state: 'on'
+      then:
+      - service: remote.learn_command
+        data:
+          device: '{{ states("input_select.remote_type") }}'
+          command: '{{ command }}'
+        target:
+          entity_id: remote.wi_fi_universal_remote_remote
+        enabled: true
+      else:
+      - service: remote.send_command
+        data:
+          device: '{{ states("input_select.remote_type") }}'
+          command: '{{ command }}'
+        target:
+          entity_id: remote.wi_fi_universal_remote_remote
+        enabled: true
+    mode: single
+    icon: mdi:remote
+    
+  remote_changesource:
+    alias: remote_changesource
+    fields:
+      device:
+        description: The name of the device
+        example: TUNER
+    sequence:
+    - service: input_select.select_option
+      data:
+        option: '{{ device }}'
+      target:
+        entity_id: input_select.remote_type
+    mode: single
+    icon: mdi:remote
