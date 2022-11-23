@@ -16,21 +16,20 @@ PREREQUISITE
 
 HOW IT WORKS:
 ------------
-
 The package define :
 
 - **remote_type** input_select that define the list of remote you want to use in your dashboard.
 
 Example : 
 
-  remote_type:
-      name: REMOTE_TYPE
-      options:
-        - STEREO
-        - TV
-        - Decoder
-      initial: STEREO
-      icon: mdi:remote
+	remote_type:
+	  name: REMOTE_TYPE
+	  options:
+		- STEREO
+		- TV
+		- Decoder
+	  initial: STEREO
+	  icon: mdi:remote
 
 - **remote_learning** input_boolean that define if the learning nmode is on or off.
 
