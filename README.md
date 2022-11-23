@@ -23,6 +23,7 @@ The package define :
 
 Example : 
 
+```yaml
   remote_type:
       name: REMOTE_TYPE
       options:
@@ -31,6 +32,7 @@ Example :
         - Decoder
       initial: STEREO
       icon: mdi:remote
+```
 
 - **remote_learning** input_boolean that define if the learning nmode is on or off.
 
@@ -42,23 +44,25 @@ the dashboard does use [custom:button-card](https://github.com/custom-cards/butt
 the dasboard does include 
 - multiple buttons to switch between remotes
   
-	- type: custom:button-card
+```yaml
+      - type: custom:button-card
 	color_type: card
 	tap_action:
 	  action: call-service
 	  service: script.remote_changesource
 	  service_data:
-		device: STEREO
+	    device: STEREO
 	name: STEREO
 	show_icon: false
 	entity: input_select.remote_type
 	color: rgb(255, 255, 255)
 	state:
 	  - value: STEREO
-		color: rgb(0, 255, 0)
-
+	    color: rgb(0, 255, 0)
+```
 
 - multiple buttons to learn/send commands:
+```yaml
   - type: custom:button-card
 	color_type: card
 	tap_action:
@@ -68,8 +72,10 @@ the dasboard does include
 		command: Power on
 	icon: mdi:power
 	color: rgb(75, 75, 77)
+```
 
 - one button to enable/disable the learning mode
+```yaml
   - show_name: true
 	show_icon: false
 	type: button
@@ -81,6 +87,7 @@ the dasboard does include
 	icon_height: 10px
 	tap_action:
 	  action: toggle
+```
 
 HOW TO DEPLOY:
 ------------
@@ -88,6 +95,7 @@ HOW TO DEPLOY:
 - copy auto_learning_remote.yaml in config/packages directory
 - configure the list of remote you want to use 
 
+```yaml
   remote_type:
       name: REMOTE_TYPE
       options:
@@ -95,16 +103,19 @@ HOW TO DEPLOY:
         - TV
         - Decoder
       initial: STEREO
-	  
+```
+
 - define the IR remote control your are using
   entity_id: remote.wi_fi_universal_remote_remote	  => entity_id: remote.yourremotecontroller
 	  
 - make sure your configuration.yaml include packages
 
+```yaml
   homeassistant:
   ...
   packages: !include_dir_named packages/
-  
+```
+
 - create a new lovelace card based on **remoteLovelace.yaml**
 
 
